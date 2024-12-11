@@ -1,0 +1,18 @@
+
+w
+java:S1488p"\Immediately return this expression instead of assigning it to the temporary variable "list".(Ïáóøÿÿÿÿ
+‚
+java:S1488„"kImmediately return this expression instead of assigning it to the temporary variable "portfolioMasterList".(àê³Í
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(«Ù§¢ıÿÿÿÿ
+Z
+java:S1854("DRemove this useless assignment to local variable "portfolioMaster1".(İş‰
+Z
+java:S18547"DRemove this useless assignment to local variable "portfolioMaster1".(İş‰
+K
+java:S1481("5Remove this unused "portfolioMaster1" local variable.(İş‰
+K
+java:S14817"5Remove this unused "portfolioMaster1" local variable.(İş‰
+Z
+java:S1854O"DRemove this useless assignment to local variable "portfolioMaster1".(İş‰
+K
+java:S1481O"5Remove this unused "portfolioMaster1" local variable.(İş‰
