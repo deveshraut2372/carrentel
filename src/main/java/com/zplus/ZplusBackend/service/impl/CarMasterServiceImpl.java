@@ -52,7 +52,7 @@ public class CarMasterServiceImpl implements CarMasterService {
     @Override
     public CarMaster getById(Integer carId) {
       CarMaster carMaster=new CarMaster();
-      carMaster=carMasterDao.findById(carId).get();
+      carMaster=carMasterDao.findById(carId).orElse(null);
       return carMaster;
     }
 

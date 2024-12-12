@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -31,7 +32,9 @@ public class SightsMasterServiceImpl implements SightsMasterService {
         try {
             BeanUtils.copyProperties(sightsMasterReq,sightsMaster);
             LocationMaster locationMaster=new LocationMaster();
-            locationMaster=locationMasterDao.findById(sightsMasterReq.getLocationId()).get();
+            locationMaster=locationMasterDao.findById(sightsMasterReq.getLocationId()).orElse(null);
+                sightsMaster.setStatus("Active");
+            sightsMaster.setDate(new Date());
             sightsMaster.setLocationMaster(locationMaster);
             this.sightsMasterDao.save(sightsMaster);
             return true;
@@ -47,7 +50,8 @@ public class SightsMasterServiceImpl implements SightsMasterService {
         try {
             BeanUtils.copyProperties(sightsMasterReq,sightsMaster);
             LocationMaster locationMaster=new LocationMaster();
-            locationMaster=locationMasterDao.findById(sightsMasterReq.getLocationId()).get();
+            locationMaster=locationMasterDao.findById(sightsMasterReq.getLocationId()).orElse(null);
+            sightsMaster.setDate(new Date());
             sightsMaster.setLocationMaster(locationMaster);
             sightsMaster.setSightId(sightsMasterReq.getSightId());
             this.sightsMasterDao.save(sightsMaster);
@@ -60,7 +64,7 @@ public class SightsMasterServiceImpl implements SightsMasterService {
 
     @Override
     public SightMaster getById(Integer sightId) {
-        return sightsMasterDao.findById(sightId).get();
+        return sightsMasterDao.findById(sightId).orElse(null);
     }
 
     @Override

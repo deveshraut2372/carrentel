@@ -51,7 +51,7 @@ public class GallaryServiceImpl implements GallaryService {
 //            this.dao.deleteById(gallaryId);
 
             GallaryMaster gallaryMaster = new GallaryMaster();
-            gallaryMaster = this.gallaryDao.findById(gallaryId).get();
+            gallaryMaster = this.gallaryDao.findById(gallaryId).orElse(null);
             gallaryMaster.setStatus("InActive");
             System.out.println("gallary deleted successfully");
             return true;

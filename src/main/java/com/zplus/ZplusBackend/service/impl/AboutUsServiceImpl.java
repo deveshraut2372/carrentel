@@ -65,7 +65,7 @@ public class AboutUsServiceImpl implements AboutUsService {
     public Boolean delete(Integer aboutUsId) {
         try {
             AboutUsMaster aboutUsMaster = new AboutUsMaster();
-            aboutUsMaster=this.aboutUsDao.findById(aboutUsId).get();
+            aboutUsMaster=this.aboutUsDao.findById(aboutUsId).orElse(null);
             aboutUsMaster.setStatus("InActive");
             this.aboutUsDao.save(aboutUsMaster);
 //            this.dao.deleteById(aboutUsId);

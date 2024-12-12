@@ -50,7 +50,7 @@ public class OurTeamServiceImpl implements OurTeamService {
         try {
 //            this.ourTeamDao.deleteById(teamId);
             OurTeamMaster ourTeamMaster = new OurTeamMaster();
-            ourTeamMaster = this.ourTeamDao.findById(teamId).get();
+            ourTeamMaster = this.ourTeamDao.findById(teamId).orElse(null);
             ourTeamMaster.setStatus("InActive");
             System.out.println("Team deleted successfully");
             return true;

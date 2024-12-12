@@ -49,7 +49,7 @@ public class MenuServiceImpl implements MenuService {
         try{
 //            this.menuDao.deleteById(menuId);
             MenuMaster menuMaster = new MenuMaster();
-            menuMaster = this.menuDao.findById(menuId).get();
+            menuMaster = this.menuDao.findById(menuId).orElse(null);
             menuMaster.setStatus("InActive");
             System.out.println("menu deleted successfully");
             return true;

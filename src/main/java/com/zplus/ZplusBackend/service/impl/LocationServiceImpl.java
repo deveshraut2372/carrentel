@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -25,6 +26,8 @@ public class LocationServiceImpl implements LocationService {
         try {
 //            bannerMaster.setBannerId(bannerRequestDto.getBannerId());
             BeanUtils.copyProperties(locationMasterReq,locationMaster);
+            locationMaster.setStatus("Active");
+            locationMaster.setDate(new Date());
             this.locationMasterDao.save(locationMaster);
             return true;
         }catch (Exception e){
@@ -39,6 +42,7 @@ public class LocationServiceImpl implements LocationService {
         try {
             BeanUtils.copyProperties(locationMasterReq,locationMaster);
             locationMaster.setLocationId(locationMasterReq.getLocationId());
+            locationMaster.setDate(new Date());
             this.locationMasterDao.save(locationMaster);
             return true;
         }catch (Exception e){
@@ -49,7 +53,7 @@ public class LocationServiceImpl implements LocationService {
 
     @Override
     public LocationMaster getById(Integer locationId) {
-        return locationMasterDao.findById(locationId).get();
+        return locationMasterDao.findById(locationId).orElse(null);
     }
 
     @Override

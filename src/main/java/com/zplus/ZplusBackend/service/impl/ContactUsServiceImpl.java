@@ -53,7 +53,7 @@ public class ContactUsServiceImpl implements ContactUsService {
         try{
 //            this.contactUsDao.deleteById(contactId);
             ContactUsMaster contactUsMaster = new ContactUsMaster();
-            contactUsMaster = this.contactUsDao.findById(contactId).get();
+            contactUsMaster = this.contactUsDao.findById(contactId).orElse(null);
             contactUsMaster.setStatus("InActive");
             return true;
         }catch (Exception e){

@@ -83,7 +83,7 @@ public class AdminServiceImpl implements AdminService {
         try {
 //            this.dao.deleteById(adminId);
             AdminMaster adminMaster = new AdminMaster();
-            adminMaster=this.adminDao.findById(adminId).get();
+            adminMaster=this.adminDao.findById(adminId).orElse(null);
             adminMaster.setStatus("InActive");
             this.adminDao.save(adminMaster);
             System.out.println("Admin deleted successfully");

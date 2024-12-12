@@ -50,7 +50,7 @@ public class YoutubeServiceImpl implements YoutubeService {
 
     @Override
     public YoutubeMaster getById(Integer youtubeId) {
-        return youtubeServiceDao.findById(youtubeId).get();
+        return youtubeServiceDao.findById(youtubeId).orElse(null);
     }
 
     @Override

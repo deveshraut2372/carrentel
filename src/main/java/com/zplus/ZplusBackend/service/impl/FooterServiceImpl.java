@@ -39,7 +39,7 @@ public class FooterServiceImpl implements FooterService {
         try {
             footerMaster.setFooterId(footerRequestDto.getFooterId());
             BeanUtils.copyProperties(footerRequestDto,footerMaster);
-            footerMaster.setLocation(footerRequestDto.getLocation().toString());
+            footerMaster.setFooterId(footerRequestDto.getFooterId());
             this.footerDao.save(footerMaster);
             return true;
         }catch (Exception e){
