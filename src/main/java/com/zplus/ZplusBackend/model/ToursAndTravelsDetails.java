@@ -34,5 +34,7 @@ public class ToursAndTravelsDetails {
     @JoinColumn(name = "toursAndTraveId")
     private ToursAndTravelsMaster toursAndTravelsMaster;
 
+    private String trips;
+
 
 }

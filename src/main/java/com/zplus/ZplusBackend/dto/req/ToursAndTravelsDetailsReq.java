@@ -24,4 +24,6 @@ public class ToursAndTravelsDetailsReq {
     private Date date;
 
     private Integer toursAndTraveId;
+
+    private String trips;
 }
