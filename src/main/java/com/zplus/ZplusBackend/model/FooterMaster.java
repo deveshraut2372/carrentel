@@ -30,6 +30,8 @@ public class FooterMaster {
 
     private String ytLink;
 
+    private String whatsappLink;
+
     private String status;
 
 }

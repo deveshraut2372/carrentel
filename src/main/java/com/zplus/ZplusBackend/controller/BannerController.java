@@ -77,10 +77,12 @@ public class BannerController {
     @GetMapping("/getAllByStatus")
     public ResponseEntity getAllByStatus()
     {
-        try {
+        try
+        {
             List list = this.bannerService.getAllByStatus();
             return new ResponseEntity<>(list,HttpStatus.OK);
-        }catch (Exception e){
+        }catch (Exception e)
+        {
             e.printStackTrace();
             return new ResponseEntity(HttpStatus.BAD_REQUEST);
         }

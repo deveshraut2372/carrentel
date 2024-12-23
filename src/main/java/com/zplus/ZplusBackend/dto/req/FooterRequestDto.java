@@ -25,5 +25,7 @@ public class FooterRequestDto {
 
     private String ytLink;
 
+    private String whatsappLink;
+
     private String status;
 }

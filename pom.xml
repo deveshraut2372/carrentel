@@ -10,7 +10,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.zplus</groupId>
-    <artifactId>carrentel</artifactId>
+    <artifactId>indrayanicarrentel</artifactId>
     <version>1.0-SNAPSHOT</version>
     <!--   <name>spring-boot-security-jwt</name>
          -->
